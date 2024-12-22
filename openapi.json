@@ -1,0 +1,931 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "BuddyのAPIサーバー",
+    "title": "Buddy-API",
+    "contact": {},
+    "version": "1.0"
+  },
+  "host": "http://localhost:8080",
+  "basePath": "/v1",
+  "paths": {
+    "/auth/signin": {
+      "post": {
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "tags": ["Auth"],
+        "summary": "サインイン用エンドポイント",
+        "parameters": [
+          {
+            "description": "Sign In Request",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/auth.SignInRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/auth.SignInResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/auth.ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/auth/signup": {
+      "post": {
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "tags": ["Auth"],
+        "summary": "サインアップ用エンドポイント",
+        "parameters": [
+          {
+            "description": "Sign Up Request",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/auth.SignUpRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/auth.SignUpResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/auth.ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/departments/{department_id}": {
+      "get": {
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "tags": ["Department"],
+        "summary": "単一の部署を取得する",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Department ID",
+            "name": "department_id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/department.DepartmentResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/department.ErrorResponse"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/department.ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/department.ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/facilities/{facility_id}/departments": {
+      "get": {
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "tags": ["Department"],
+        "summary": "施設IDに紐づく部署を取得する",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Facility ID",
+            "name": "facility_id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/department.DepartmentResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/department.ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/department.ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/facilities/{facility_id}/positions": {
+      "get": {
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "tags": ["Position"],
+        "summary": "施設IDに紐づく役職を取得する",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Facility ID",
+            "name": "facility_id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/position.PositionResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/position.ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/position.ErrorResponse"
+            }
+          }
+        }
+      },
+      "post": {
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "tags": ["Position"],
+        "summary": "施設に紐づく役職を作成する",
+        "parameters": [
+          {
+            "description": "Create Position Request",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/position.CreatePositionRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/position.PositionResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/position.ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/position.ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/facilities/{facility_id}/teams": {
+      "get": {
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "tags": ["Team"],
+        "summary": "施設IDに紐づくチームを取得する",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Facility ID",
+            "name": "facility_id",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/team.TeamResponse"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/team.ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/team.ErrorResponse"
+            }
+          }
+        }
+      },
+      "post": {
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "tags": ["Team"],
+        "summary": "施設に紐づくチームを作成する",
+        "parameters": [
+          {
+            "description": "Create Team Request",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/team.CreateTeamRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/team.TeamResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/team.ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/team.ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "tags": ["Health"],
+        "summary": "ヘルスチェック用エンドポイント",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/health_handler.HealthResponse"
+            }
+          }
+        }
+      }
+    },
+    "/policies": {
+      "get": {
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "tags": ["Policy"],
+        "summary": "ポリシー一覧を取得する",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/policy.PolicyResponse"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/policy.ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/policy.ErrorResponse"
+            }
+          }
+        }
+      },
+      "post": {
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "tags": ["Policy"],
+        "summary": "ポリシーを作成する",
+        "parameters": [
+          {
+            "description": "Create Policy Request",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/policy.CreatePolicyRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/policy.CreatePolicyResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/policy.ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/policy.ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/policies/{policy_id}": {
+      "get": {
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "tags": ["Policy"],
+        "summary": "単一のポリシーを取得する",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Policy ID",
+            "name": "policy_id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/policy.PolicyResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/policy.ErrorResponse"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/policy.ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/policy.ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/positions/{position_id}": {
+      "get": {
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "tags": ["Position"],
+        "summary": "単一の役職を取得する",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Position ID",
+            "name": "position_id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/position.PositionResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/position.ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/position.ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/teams/{team_id}": {
+      "get": {
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "tags": ["Team"],
+        "summary": "単一のチーム取得する",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Team ID",
+            "name": "team_id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/team.TeamResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/team.ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/team.ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}": {
+      "get": {
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "tags": ["User"],
+        "summary": "単一のユーザーを取得する",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "User ID",
+            "name": "user_id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/user.UserResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/user.ErrorResponse"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/user.ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/user.ErrorResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "auth.ErrorResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        }
+      }
+    },
+    "auth.SignInRequest": {
+      "type": "object",
+      "required": ["password", "username"],
+      "properties": {
+        "password": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        }
+      }
+    },
+    "auth.SignInResponse": {
+      "type": "object",
+      "properties": {
+        "access_token": {
+          "type": "string"
+        },
+        "id_token": {
+          "type": "string"
+        }
+      }
+    },
+    "auth.SignUpRequest": {
+      "type": "object",
+      "required": [
+        "department_id",
+        "facility_id",
+        "password",
+        "position_id",
+        "team_id",
+        "username"
+      ],
+      "properties": {
+        "department_id": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "facility_id": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "string"
+        },
+        "position_id": {
+          "type": "string"
+        },
+        "team_id": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        }
+      }
+    },
+    "auth.SignUpResponse": {
+      "type": "object",
+      "properties": {
+        "department": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "facility": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "string"
+        },
+        "policies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/policy.Policy"
+          }
+        },
+        "position": {
+          "type": "string"
+        },
+        "team": {
+          "type": "string"
+        }
+      }
+    },
+    "department.DepartmentResponse": {
+      "type": "object",
+      "properties": {
+        "created_at": {
+          "type": "string"
+        },
+        "deleted_at": {
+          "type": "string"
+        },
+        "facility_id": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      }
+    },
+    "department.ErrorResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "health_handler.HealthResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "policy.CreatePolicyRequest": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "policy.CreatePolicyResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "policy.ErrorResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        }
+      }
+    },
+    "policy.Policy": {
+      "type": "object",
+      "properties": {
+        "created_at": {
+          "type": "string"
+        },
+        "deleted_at": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      }
+    },
+    "policy.PolicyResponse": {
+      "type": "object",
+      "properties": {
+        "created_at": {
+          "type": "string"
+        },
+        "deleted_at": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      }
+    },
+    "position.CreatePositionRequest": {
+      "type": "object",
+      "required": ["name", "policy_ids"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "policy_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "position.ErrorResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        }
+      }
+    },
+    "position.PolicyDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "position.PositionResponse": {
+      "type": "object",
+      "properties": {
+        "created_at": {
+          "type": "string"
+        },
+        "deleted_at": {
+          "type": "string"
+        },
+        "facility_id": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "policies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/position.PolicyDto"
+          }
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      }
+    },
+    "team.CreateTeamRequest": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "team.ErrorResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        }
+      }
+    },
+    "team.TeamResponse": {
+      "type": "object",
+      "properties": {
+        "created_at": {
+          "type": "string"
+        },
+        "deleted_at": {
+          "type": "string"
+        },
+        "facility_id": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      }
+    },
+    "user.ErrorResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "user.PolicyModel": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "user.UserResponse": {
+      "type": "object",
+      "properties": {
+        "created_at": {
+          "type": "string"
+        },
+        "deleted_at": {
+          "type": "string"
+        },
+        "department": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "facility": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "policies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/user.PolicyModel"
+          }
+        },
+        "position": {
+          "type": "string"
+        },
+        "team": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

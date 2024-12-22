@@ -1,0 +1,671 @@
+basePath: /v1
+definitions:
+  auth.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  auth.SignInRequest:
+    properties:
+      password:
+        type: string
+      username:
+        type: string
+    required:
+    - password
+    - username
+    type: object
+  auth.SignInResponse:
+    properties:
+      access_token:
+        type: string
+      id_token:
+        type: string
+    type: object
+  auth.SignUpRequest:
+    properties:
+      department_id:
+        type: string
+      email:
+        type: string
+      facility_id:
+        type: string
+      password:
+        type: string
+      phone_number:
+        type: string
+      position_id:
+        type: string
+      team_id:
+        type: string
+      username:
+        type: string
+    required:
+    - department_id
+    - facility_id
+    - password
+    - position_id
+    - team_id
+    - username
+    type: object
+  auth.SignUpResponse:
+    properties:
+      department:
+        type: string
+      email:
+        type: string
+      facility:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      phone_number:
+        type: string
+      policies:
+        items:
+          $ref: '#/definitions/policy.Policy'
+        type: array
+      position:
+        type: string
+      team:
+        type: string
+    type: object
+  department.DepartmentResponse:
+    properties:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      facility_id:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  department.ErrorResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  health_handler.HealthResponse:
+    properties:
+      status:
+        type: string
+    type: object
+  policy.CreatePolicyRequest:
+    properties:
+      name:
+        type: string
+    required:
+    - name
+    type: object
+  policy.CreatePolicyResponse:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+    type: object
+  policy.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  policy.Policy:
+    properties:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  policy.PolicyResponse:
+    properties:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  position.CreatePositionRequest:
+    properties:
+      name:
+        type: string
+      policy_ids:
+        items:
+          type: string
+        type: array
+    required:
+    - name
+    - policy_ids
+    type: object
+  position.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  position.PolicyDto:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+    type: object
+  position.PositionResponse:
+    properties:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      facility_id:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      policies:
+        items:
+          $ref: '#/definitions/position.PolicyDto'
+        type: array
+      updated_at:
+        type: string
+    type: object
+  team.CreateTeamRequest:
+    properties:
+      name:
+        type: string
+    required:
+    - name
+    type: object
+  team.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  team.TeamResponse:
+    properties:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      facility_id:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  user.ErrorResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  user.PolicyModel:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+    type: object
+  user.UserResponse:
+    properties:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      department:
+        type: string
+      email:
+        type: string
+      facility:
+        type: string
+      id:
+        type: string
+      phone:
+        type: string
+      policies:
+        items:
+          $ref: '#/definitions/user.PolicyModel'
+        type: array
+      position:
+        type: string
+      team:
+        type: string
+      updated_at:
+        type: string
+      username:
+        type: string
+    type: object
+host: http://localhost:8080
+info:
+  contact: {}
+  description: BuddyのAPIサーバー
+  title: Buddy-API
+  version: "1.0"
+paths:
+  /auth/signin:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Sign In Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/auth.SignInRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/auth.SignInResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/auth.ErrorResponse'
+      summary: サインイン用エンドポイント
+      tags:
+      - Auth
+  /auth/signup:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Sign Up Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/auth.SignUpRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/auth.SignUpResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/auth.ErrorResponse'
+      summary: サインアップ用エンドポイント
+      tags:
+      - Auth
+  /departments/{department_id}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Department ID
+        in: path
+        name: department_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/department.DepartmentResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/department.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/department.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/department.ErrorResponse'
+      summary: 単一の部署を取得する
+      tags:
+      - Department
+  /facilities/{facility_id}/departments:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Facility ID
+        in: path
+        name: facility_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/department.DepartmentResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/department.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/department.ErrorResponse'
+      summary: 施設IDに紐づく部署を取得する
+      tags:
+      - Department
+  /facilities/{facility_id}/positions:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Facility ID
+        in: path
+        name: facility_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/position.PositionResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/position.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/position.ErrorResponse'
+      summary: 施設IDに紐づく役職を取得する
+      tags:
+      - Position
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Create Position Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/position.CreatePositionRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/position.PositionResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/position.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/position.ErrorResponse'
+      summary: 施設に紐づく役職を作成する
+      tags:
+      - Position
+  /facilities/{facility_id}/teams:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Facility ID
+        in: query
+        name: facility_id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/team.TeamResponse'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/team.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/team.ErrorResponse'
+      summary: 施設IDに紐づくチームを取得する
+      tags:
+      - Team
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Create Team Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/team.CreateTeamRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/team.TeamResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/team.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/team.ErrorResponse'
+      summary: 施設に紐づくチームを作成する
+      tags:
+      - Team
+  /health:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/health_handler.HealthResponse'
+      summary: ヘルスチェック用エンドポイント
+      tags:
+      - Health
+  /policies:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/policy.PolicyResponse'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/policy.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/policy.ErrorResponse'
+      summary: ポリシー一覧を取得する
+      tags:
+      - Policy
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Create Policy Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/policy.CreatePolicyRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/policy.CreatePolicyResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/policy.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/policy.ErrorResponse'
+      summary: ポリシーを作成する
+      tags:
+      - Policy
+  /policies/{policy_id}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Policy ID
+        in: path
+        name: policy_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/policy.PolicyResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/policy.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/policy.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/policy.ErrorResponse'
+      summary: 単一のポリシーを取得する
+      tags:
+      - Policy
+  /positions/{position_id}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Position ID
+        in: path
+        name: position_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/position.PositionResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/position.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/position.ErrorResponse'
+      summary: 単一の役職を取得する
+      tags:
+      - Position
+  /teams/{team_id}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Team ID
+        in: path
+        name: team_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/team.TeamResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/team.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/team.ErrorResponse'
+      summary: 単一のチーム取得する
+      tags:
+      - Team
+  /users/{user_id}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: User ID
+        in: path
+        name: user_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/user.UserResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/user.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/user.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/user.ErrorResponse'
+      summary: 単一のユーザーを取得する
+      tags:
+      - User
+swagger: "2.0"

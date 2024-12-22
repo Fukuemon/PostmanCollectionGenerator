@@ -1,0 +1,2532 @@
+{
+    "item": [
+        {
+            "name": "Auth",
+            "description": "",
+            "item": [
+                {
+                    "id": "5fdde9e5-de04-4095-a579-b16c96932d4b",
+                    "name": "サインイン用エンドポイント",
+                    "request": {
+                        "name": "サインイン用エンドポイント",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "auth",
+                                "signin"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"password\": \"<string>\",\n  \"username\": \"<string>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "6536e4e2-aa57-4da8-97b7-ee15eedcdc97",
+                            "name": "Created",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "auth",
+                                        "signin"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"password\": \"<string>\",\n  \"username\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "Created",
+                            "code": 201,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"access_token\": \"<string>\",\n  \"id_token\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "62355775-7edf-4891-894f-f5ff502e1db2",
+                            "name": "Bad Request",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "auth",
+                                        "signin"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"password\": \"<string>\",\n  \"username\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                },
+                {
+                    "id": "255fc1f1-d1bc-4fac-814b-90cecb65e5b6",
+                    "name": "サインアップ用エンドポイント",
+                    "request": {
+                        "name": "サインアップ用エンドポイント",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "auth",
+                                "signup"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"department_id\": \"<string>\",\n  \"facility_id\": \"<string>\",\n  \"password\": \"<string>\",\n  \"position_id\": \"<string>\",\n  \"team_id\": \"<string>\",\n  \"username\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone_number\": \"<string>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "0f2be70e-340c-4b8c-aa2c-a1c3f3108016",
+                            "name": "Created",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "auth",
+                                        "signup"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"department_id\": \"<string>\",\n  \"facility_id\": \"<string>\",\n  \"password\": \"<string>\",\n  \"position_id\": \"<string>\",\n  \"team_id\": \"<string>\",\n  \"username\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone_number\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "Created",
+                            "code": 201,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"department\": \"<string>\",\n  \"email\": \"<string>\",\n  \"facility\": \"<string>\",\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phone_number\": \"<string>\",\n  \"policies\": [\n    {\n      \"created_at\": \"<string>\",\n      \"deleted_at\": \"<string>\",\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"updated_at\": \"<string>\"\n    },\n    {\n      \"created_at\": \"<string>\",\n      \"deleted_at\": \"<string>\",\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"updated_at\": \"<string>\"\n    }\n  ],\n  \"position\": \"<string>\",\n  \"team\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "4f97ee63-6f07-480d-8d0a-670e051122d1",
+                            "name": "Bad Request",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "auth",
+                                        "signup"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"department_id\": \"<string>\",\n  \"facility_id\": \"<string>\",\n  \"password\": \"<string>\",\n  \"position_id\": \"<string>\",\n  \"team_id\": \"<string>\",\n  \"username\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone_number\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Department",
+            "description": "",
+            "item": [
+                {
+                    "id": "b9620580-5f9b-40bf-afb0-519baea6caea",
+                    "name": "単一の部署を取得する",
+                    "request": {
+                        "name": "単一の部署を取得する",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "departments",
+                                ":department_id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "department_id",
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) Department ID",
+                                        "type": "text/plain"
+                                    }
+                                }
+                            ]
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "c03d11b6-14fb-4903-8f48-6f95147b921a",
+                            "name": "OK",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "departments",
+                                        ":department_id"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"created_at\": \"<string>\",\n  \"deleted_at\": \"<string>\",\n  \"facility_id\": \"<string>\",\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "48a50a81-bdb4-4320-be2b-d5128ece4656",
+                            "name": "Bad Request",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "departments",
+                                        ":department_id"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"message\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "46ad6c7d-4b3d-430b-b21d-baed2955663f",
+                            "name": "Not Found",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "departments",
+                                        ":department_id"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Not Found",
+                            "code": 404,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"message\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "32e25dd5-b213-4ecf-9707-7ec4539ce5cf",
+                            "name": "Internal Server Error",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "departments",
+                                        ":department_id"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Internal Server Error",
+                            "code": 500,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"message\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                },
+                {
+                    "id": "523496e6-8b80-4b4f-9900-d363e5f321da",
+                    "name": "施設IDに紐づく部署を取得する",
+                    "request": {
+                        "name": "施設IDに紐づく部署を取得する",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "facilities",
+                                ":facility_id",
+                                "departments"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "facility_id",
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) Facility ID",
+                                        "type": "text/plain"
+                                    }
+                                }
+                            ]
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "8e067841-67b3-4f04-ac31-a6aa6031b321",
+                            "name": "OK",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "facilities",
+                                        ":facility_id",
+                                        "departments"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"created_at\": \"<string>\",\n  \"deleted_at\": \"<string>\",\n  \"facility_id\": \"<string>\",\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "5efedb9f-00ce-48d7-aaa4-5f09fb8b7cc5",
+                            "name": "Bad Request",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "facilities",
+                                        ":facility_id",
+                                        "departments"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"message\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "173a86e7-4b1b-46be-a3f8-9652ab917be2",
+                            "name": "Internal Server Error",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "facilities",
+                                        ":facility_id",
+                                        "departments"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Internal Server Error",
+                            "code": 500,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"message\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Position",
+            "description": "",
+            "item": [
+                {
+                    "id": "cd54195f-dac3-43d6-992d-ba47c49554e2",
+                    "name": "施設IDに紐づく役職を取得する",
+                    "request": {
+                        "name": "施設IDに紐づく役職を取得する",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "facilities",
+                                ":facility_id",
+                                "positions"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "facility_id",
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) Facility ID",
+                                        "type": "text/plain"
+                                    }
+                                }
+                            ]
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "c6842597-c183-4a00-830e-2c29f3dc9243",
+                            "name": "OK",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "facilities",
+                                        ":facility_id",
+                                        "positions"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"created_at\": \"<string>\",\n  \"deleted_at\": \"<string>\",\n  \"facility_id\": \"<string>\",\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"policies\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"updated_at\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "931b9095-9f25-4ede-8652-70e02ea0f539",
+                            "name": "Bad Request",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "facilities",
+                                        ":facility_id",
+                                        "positions"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "4764687c-b9d7-45b6-b229-2aaf30f6b66b",
+                            "name": "Internal Server Error",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "facilities",
+                                        ":facility_id",
+                                        "positions"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Internal Server Error",
+                            "code": 500,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                },
+                {
+                    "id": "10b53101-df74-48da-b1f1-6fcd6c6d116f",
+                    "name": "施設に紐づく役職を作成する",
+                    "request": {
+                        "name": "施設に紐づく役職を作成する",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "facilities",
+                                ":facility_id",
+                                "positions"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "key": "facility_id"
+                                }
+                            ]
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"<string>\",\n  \"policy_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "2dfb7c06-668c-4b29-b5e6-42a36aa39341",
+                            "name": "Created",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "facilities",
+                                        ":facility_id",
+                                        "positions"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"name\": \"<string>\",\n  \"policy_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "Created",
+                            "code": 201,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"created_at\": \"<string>\",\n  \"deleted_at\": \"<string>\",\n  \"facility_id\": \"<string>\",\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"policies\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"updated_at\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "321b5de2-6147-4396-b88e-5036ab1834fb",
+                            "name": "Bad Request",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "facilities",
+                                        ":facility_id",
+                                        "positions"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"name\": \"<string>\",\n  \"policy_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "561f414d-21c8-4166-ad7b-0e0576e0a8df",
+                            "name": "Internal Server Error",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "facilities",
+                                        ":facility_id",
+                                        "positions"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"name\": \"<string>\",\n  \"policy_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "Internal Server Error",
+                            "code": 500,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                },
+                {
+                    "id": "d0f7517d-d79c-4e7a-80ce-48d5a7a52b94",
+                    "name": "単一の役職を取得する",
+                    "request": {
+                        "name": "単一の役職を取得する",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "positions",
+                                ":position_id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "position_id",
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) Position ID",
+                                        "type": "text/plain"
+                                    }
+                                }
+                            ]
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "ea123bcc-626c-4991-9264-0d92be849e06",
+                            "name": "OK",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "positions",
+                                        ":position_id"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"created_at\": \"<string>\",\n  \"deleted_at\": \"<string>\",\n  \"facility_id\": \"<string>\",\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"policies\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"updated_at\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "5dde8f3a-d861-4476-b821-e4fc068d7a7c",
+                            "name": "Bad Request",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "positions",
+                                        ":position_id"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "cbfb5e52-d57c-4ecd-abe0-3f4ddd4fe4ed",
+                            "name": "Internal Server Error",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "positions",
+                                        ":position_id"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Internal Server Error",
+                            "code": 500,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Team",
+            "description": "",
+            "item": [
+                {
+                    "id": "da03627b-5a35-4afc-abec-3ef3cb518771",
+                    "name": "施設IDに紐づくチームを取得する",
+                    "request": {
+                        "name": "施設IDに紐づくチームを取得する",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "facilities",
+                                ":facility_id",
+                                "teams"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "Facility ID",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "facility_id",
+                                    "value": "<string>"
+                                }
+                            ],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "key": "facility_id"
+                                }
+                            ]
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "42a19426-0a4d-4514-9c07-4732d74a67a8",
+                            "name": "OK",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "facilities",
+                                        ":facility_id",
+                                        "teams"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "disabled": true,
+                                            "description": {
+                                                "content": "Facility ID",
+                                                "type": "text/plain"
+                                            },
+                                            "key": "facility_id",
+                                            "value": "<string>"
+                                        }
+                                    ],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "[\n  {\n    \"created_at\": \"<string>\",\n    \"deleted_at\": \"<string>\",\n    \"facility_id\": \"<string>\",\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  },\n  {\n    \"created_at\": \"<string>\",\n    \"deleted_at\": \"<string>\",\n    \"facility_id\": \"<string>\",\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  }\n]",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "4802c111-8a4c-441f-a507-4140323bcb02",
+                            "name": "Bad Request",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "facilities",
+                                        ":facility_id",
+                                        "teams"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "disabled": true,
+                                            "description": {
+                                                "content": "Facility ID",
+                                                "type": "text/plain"
+                                            },
+                                            "key": "facility_id",
+                                            "value": "<string>"
+                                        }
+                                    ],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "7719b7cf-312d-4d15-afa8-3d7604b83f81",
+                            "name": "Internal Server Error",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "facilities",
+                                        ":facility_id",
+                                        "teams"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "disabled": true,
+                                            "description": {
+                                                "content": "Facility ID",
+                                                "type": "text/plain"
+                                            },
+                                            "key": "facility_id",
+                                            "value": "<string>"
+                                        }
+                                    ],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Internal Server Error",
+                            "code": 500,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                },
+                {
+                    "id": "d8454bee-e16a-4281-9610-a853ea5f4ffc",
+                    "name": "施設に紐づくチームを作成する",
+                    "request": {
+                        "name": "施設に紐づくチームを作成する",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "facilities",
+                                ":facility_id",
+                                "teams"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "key": "facility_id"
+                                }
+                            ]
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"<string>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "abbd60b1-5115-490f-a5a2-b816c1785d2e",
+                            "name": "Created",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "facilities",
+                                        ":facility_id",
+                                        "teams"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"name\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "Created",
+                            "code": 201,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"created_at\": \"<string>\",\n  \"deleted_at\": \"<string>\",\n  \"facility_id\": \"<string>\",\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "47647c4e-24fe-41f3-9bb9-e74c0da5d424",
+                            "name": "Bad Request",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "facilities",
+                                        ":facility_id",
+                                        "teams"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"name\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "0266d988-2869-4310-8833-01d0df126589",
+                            "name": "Internal Server Error",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "facilities",
+                                        ":facility_id",
+                                        "teams"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"name\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "Internal Server Error",
+                            "code": 500,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                },
+                {
+                    "id": "02fa5080-2789-4e18-9ee0-5d88a1322d86",
+                    "name": "単一のチーム取得する",
+                    "request": {
+                        "name": "単一のチーム取得する",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "teams",
+                                ":team_id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "team_id",
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) Team ID",
+                                        "type": "text/plain"
+                                    }
+                                }
+                            ]
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "be25ec39-3699-44e3-8b8a-3c406372534c",
+                            "name": "OK",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "teams",
+                                        ":team_id"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"created_at\": \"<string>\",\n  \"deleted_at\": \"<string>\",\n  \"facility_id\": \"<string>\",\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "fdd032b3-b7f7-48d9-80c3-361db5560190",
+                            "name": "Bad Request",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "teams",
+                                        ":team_id"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "dccae74e-bb52-46f5-8e89-cf60dfb150b1",
+                            "name": "Internal Server Error",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "teams",
+                                        ":team_id"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Internal Server Error",
+                            "code": 500,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Health",
+            "description": "",
+            "item": [
+                {
+                    "id": "40c7fbd0-565f-4ce2-a5d9-ecec6c5cb215",
+                    "name": "ヘルスチェック用エンドポイント",
+                    "request": {
+                        "name": "ヘルスチェック用エンドポイント",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "health"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "d5cc1989-2bd0-4d98-9017-176ff49adb7e",
+                            "name": "OK",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "health"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"status\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Policy",
+            "description": "",
+            "item": [
+                {
+                    "id": "ee5396c1-a689-471b-8d98-ed2bdb6502ef",
+                    "name": "ポリシー一覧を取得する",
+                    "request": {
+                        "name": "ポリシー一覧を取得する",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "policies"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "7e734d4d-ebbb-4617-a069-86a8df24d6ce",
+                            "name": "OK",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "policies"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "[\n  {\n    \"created_at\": \"<string>\",\n    \"deleted_at\": \"<string>\",\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  },\n  {\n    \"created_at\": \"<string>\",\n    \"deleted_at\": \"<string>\",\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  }\n]",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "333006da-d6a3-45eb-af41-6daa8bc4d77c",
+                            "name": "Bad Request",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "policies"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "c98faf0a-212b-44d0-a178-a7e1ac7804ce",
+                            "name": "Internal Server Error",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "policies"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Internal Server Error",
+                            "code": 500,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                },
+                {
+                    "id": "ea0236d0-b2ba-40f0-913f-f6b704a742a2",
+                    "name": "ポリシーを作成する",
+                    "request": {
+                        "name": "ポリシーを作成する",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "policies"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"<string>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "64e263e4-08a2-4dc8-acc5-7e42daa009b7",
+                            "name": "Created",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "policies"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"name\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "Created",
+                            "code": 201,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "f98e5208-bedb-4572-9f3c-4ed11dffc704",
+                            "name": "Bad Request",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "policies"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"name\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "da553a90-b45d-4384-a04a-2d2231048f0d",
+                            "name": "Internal Server Error",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "policies"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"name\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "Internal Server Error",
+                            "code": 500,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                },
+                {
+                    "id": "c849b7d2-4116-4236-a5bb-90670a262d23",
+                    "name": "単一のポリシーを取得する",
+                    "request": {
+                        "name": "単一のポリシーを取得する",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "policies",
+                                ":policy_id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "policy_id",
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) Policy ID",
+                                        "type": "text/plain"
+                                    }
+                                }
+                            ]
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "e61f6b0a-8fe3-4cc3-a857-2d7853fae604",
+                            "name": "OK",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "policies",
+                                        ":policy_id"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"created_at\": \"<string>\",\n  \"deleted_at\": \"<string>\",\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "5986c7f7-020b-4704-abe9-d3ada352ec49",
+                            "name": "Bad Request",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "policies",
+                                        ":policy_id"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "0bcab5c9-607f-48b6-ba20-3a515b758b0c",
+                            "name": "Not Found",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "policies",
+                                        ":policy_id"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Not Found",
+                            "code": 404,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "7379cbaa-82ea-49ce-ad24-65024d254ea7",
+                            "name": "Internal Server Error",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "policies",
+                                        ":policy_id"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Internal Server Error",
+                            "code": 500,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"error\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "User",
+            "description": "",
+            "item": [
+                {
+                    "id": "6109ec24-803a-4adf-a27e-dadbc4148d7e",
+                    "name": "単一のユーザーを取得する",
+                    "request": {
+                        "name": "単一のユーザーを取得する",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "users",
+                                ":user_id"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "value": "<string>",
+                                    "key": "user_id",
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) User ID",
+                                        "type": "text/plain"
+                                    }
+                                }
+                            ]
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "b04250cb-78ad-45e1-9841-e188441468fd",
+                            "name": "OK",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "users",
+                                        ":user_id"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"created_at\": \"<string>\",\n  \"deleted_at\": \"<string>\",\n  \"department\": \"<string>\",\n  \"email\": \"<string>\",\n  \"facility\": \"<string>\",\n  \"id\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"policies\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"position\": \"<string>\",\n  \"team\": \"<string>\",\n  \"updated_at\": \"<string>\",\n  \"username\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "534b52d0-bc4b-41a5-82be-70bfdb7d0523",
+                            "name": "Bad Request",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "users",
+                                        ":user_id"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"message\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "40c122fe-3fe7-4791-8bf2-1212d38d184e",
+                            "name": "Not Found",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "users",
+                                        ":user_id"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Not Found",
+                            "code": 404,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"message\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        },
+                        {
+                            "id": "a10b5f00-a52d-449f-84e0-988baeb25290",
+                            "name": "Internal Server Error",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "users",
+                                        ":user_id"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "Internal Server Error",
+                            "code": 500,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"message\": \"<string>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        }
+    ],
+    "event": [],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "//http://localhost:8080/v1"
+        }
+    ],
+    "info": {
+        "_postman_id": "ef148017-0e10-4736-adfe-e56f64447b26",
+        "name": "Buddy-API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": {
+            "content": "BuddyのAPIサーバー",
+            "type": "text/plain"
+        }
+    }
+}

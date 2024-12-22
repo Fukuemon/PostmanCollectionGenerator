@@ -1,0 +1,7 @@
+services:
+  postman_collection_update:
+    image: fukuemon/postman_collection_update
+    volumes:
+      - ./openapi.json:/openapi.json
+    env_file:
+      - .env
